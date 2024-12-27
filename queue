@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+#dene SIZE 5
+int queue[SIZE];
+int front =-1, rear =-1;
+void enqueue(int value);
+int dequeue();
+void display();
+int main(){
+int value, option;
+while(1){
+printf("Enter 1 to INSERT, 2 to DELETE, 3 to DISPLAY, 4 to EXIT: \n");
+scanf("%d",&option);
+9| Page
+switch(option){
+case 1:
+printf("Enter value to be inserted: \n");
+scanf("%d",&value);
+enqueue(value);
+break;
+case 2:
+value = dequeue();
+printf("Value deleted is: %d\n",value);
+break;
+case 3:
+display();
+break;
+case 4:
+exit(1);
+break;
+default:
+printf("Invalid Input.\n");
+}
+}
+}
+void enqueue(int value){
+if(rear == (SIZE-1)){
+printf("Queue OVERFLOW\n");
+}else if (front==-1 && rear==-1){
+front++;
+rear++;
+queue[rear] = value;
+}else {
+
+rear++;
+queue[rear] = value;
+}
+}
+int dequeue(){
+int value;
+if((front==-1 && rear==-1)|| front>rear){
+printf("Queue UNDERFLOW\n");
+}else{
+value = queue[front];
+front++;
+return value;
+}
+}
+void display(){
+if(front==-1){
+printf("Queue is EMPTY.\n");
+}else{
+for(int i = front; i<rear; i++){
+printf("Queue elements are: \n");
+printf("%d",queueue)
+
+
+
