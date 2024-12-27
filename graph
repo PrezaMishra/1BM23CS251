@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define MAX 10
+int adj[MAX][MAX]; // Adjacency matrix
+int visited[MAX]; // Visited array
+
+void dfs(int start, int n) {
+printf("%d ", start);
+visited[start] = 1;
+for (int i = 0; i < n; i++) {
+if (adj[start][i] && !visited[i]) {
+dfs(i, n);
+}
+}
+}
+int main() {
+int n, edges, u, v, start;
+printf("Enter number of vertices: ");
+scanf("%d", &n);
+printf("Enter number of edges: ");
+scanf("%d", &edges);
+for (int i = 0; i < edges; i++) {
+printf("Enter edge (u v): ");
+scanf("%d %d", &u, &v);
+adj[u][v] = adj[v][u] = 1; // Undirected graph
+}
+printf("Enter starting vertex: ");
+scanf("%d", &start);
+printf("DFS Traversal: ");
+
+dfs(start, n);
+printf("\n");
+return 0;
+}
